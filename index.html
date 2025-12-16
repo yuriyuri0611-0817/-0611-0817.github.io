@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linuxについて</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <a href="#" class="name">@ryuya0718</a>
+            <h1>Linuxについて</h1>
+            <p>この記事ではLinuxについて学習したことを書きたいと思います</p>
+            <p>学習教材は<a href="https://youtu.be/IDIDa8HKOW4?si=7pRNXaisVR4GchDB">https://youtu.be/IDIDa8HKOW4?si=7pRNXaisVR4GchDB</a>を使わせていただきました。<br>
+            説明がものすごくわかりやすかったです。この動画で学んだことについてまとめていきます</p>
+        </div>
+
+
+        <div class="basic">
+            <div class="basic-text">
+                <h2>Linuxとは??</h2>
+                <h3>Linuxとは、<span class="str">オープンソースとして公開されているOSの1つ</span>。<br>
+                利点としては</h3>
+                <ul>
+                    <li>1行のコマンド操作で操作可能</li>
+                    <li>スクリプトを書いてから自動化</li>
+                    <li>操作を後から確認できる</li>
+                </ul>
+                <p>と、いろいろなメリットがあり多くの人から使われている</p>
+            </div>
+            <img class="lnx" src="../image/linux-750x563-1.jpeg"/>
+        </div>
+        
+
+        <div class="package">
+            <h2>パッケージ管理</h2>
+            <p>パッケージ管理についてのコマンドについて</p>
+            <ul>
+                <li>apt install パッケージ名(パッケージをインストール)</li>
+                <li>apt update(aptが管理するパッケージリストを更新)</li>
+                <li>apt upgrade(aptで管理しているすべてのパッケージをバージョンアップ)</li>
+                <li>apt install --only-upgrade パッケージ名(指定したパッケージだけをバージョンアップ)</li>
+                <li>apt remove パッケージ名(指定したパッケージを削除)</li>
+            </ul>
+        </div>
+
+
+        <div class="directory">
+            <h2>ディレクトリ移動</h2>
+            <P>ディレクトリ移動についてのコマンドについて</P>
+            <ul>
+                <li>pwd (今いるディレクトリを表示)</li>
+                <li>ls (ディレクトリ内のファイル・ディレクトリを表示)</li>
+                <li>ll (ディレクトリ内のファイル・ディレクトリの詳細を表示)</li>
+            </ul>
+            <p>ファイルの種類とパーミッション</p>
+            <img src="../image/ls.png" alt="lsコマンド結果">
+            <p>左から順に、</p>
+            <ul>
+                <li>ファイルの種類とパーミッション</li>
+                <li>ハードリンクの数</li>
+                <li>所有ユーザー名</li>
+                <li>所有グループ名</li>
+                <li>ファイルサイズ(バイト)</li>
+                <li>作成・更新された日時</li>
+                <li>ファイル名・ディレクトリ名</li>
+            </ul>
+            <p>1個目の文字(ファイルの種類)</p>
+            <ul>
+                <li>d: ディレクトリ</li>
+                <li>-: ファイル</li>
+                <li>l: シンボリックリンク(別ファイルへの参照を持つファイル)</li>
+            </ul>
+            <p>それ以降の文字について</p>
+            <ul>
+                <li>2-4個目の文字 (所有ユーザーのパーミッション)</li>
+                <li>5-7個目の文字 所有グループのパーミッション)</li>
+                <li>8-10個目の文字 (その他のユーザーのパーミッション)</li>
+            </ul>
+            <p>3つの文字は左から順に、読み取り→実行→読み取り許可を表している</p>
+            <p>それぞれの意味としては</p>
+            <ul>
+                <li>r: 読み取りを許可</li>
+                <li>w: 書き込みを許可</li>
+                <li>x: 実行を許可</li>
+            </ul>
+            <p>例えばdrwxr-xr-xというファイルがあった場合</p>
+            <ul>
+                <li>種類がディレクトリ</li>
+                <li>所有ユーザーは読み取り・書き込み・実行を許可</li>
+                <li>所有Gとその他ユーザーは読み取り・実行だけ許可</li>
+            </ul>
+            <p>となっている</p>
+            <p>ハードリンクについて</p>
+            <p>ハードリンクとは別ファイルへの参照、特定のファイルに対して異なる名前を持ちたいときに使う</p>
+            <h2>cdコマンドについて</h2>
+            <p>cdコマンドとは、移動先のディレクトリパス<br>
+            <ul>
+                <li>cd libと打つと、libディレクトリに移動する</li>
+                <li>cd .. と打つと1つ上のディレクトリに移動できる</li>
+                <li>cd ~ でホームディレクトリ</li>
+                <li>cd - で1つ前に戻る</li>
+            </ul>
+
+
+            <div class="display">
+                <h2>ファイルの中身を表示</h2>
+                <p>cat ファイル名 (ファイルの中身を表示)</p>
+            </div>
+
+
+            <div class="operation">
+                <h2>ファイル・ディレクトリの作成</h2>
+                <p>ファイル・ディレクトリの作成のコマンドについて</p>
+                <p>mkdir (ディレクトリの作成)<br>
+                touch ファイルのパス (ファイルの作成)</p>
+                <h2>ファイル・ディレクトリの移動</h2>
+                <p>mv 移動対象のパス 移動先のパス(ファイルやディレクトリを移動)<br>
+                    ex) mv 2024_ccc.md 2024_ddd.md (2024_ccc.mdを2024_ddd.mdに変更)
+                </p>
+                <h2>ファイル・ディレクトリのコピー</h2>
+                <p>cp コピー対象のパス コピー先のパス<br>
+                ex) cp 2024_ddd.md ../ (2024_ddd.mdを1つ上のディレクトリに移動)</p>
+                <h2>ファイル・ディレクトリの削除</h2>
+                <p>rm 対象のファイルパス</p>
+            </div>
+
+
+            <div class="acheive">
+                <h2>圧縮・アーカイブ</h2>
+                <p>なぜアーカイブ化するの??<br>
+                ⇒<span class="str">複数のファイルやディレクトリを1つのファイルにまとめ、管理や転送を容易にするため</span></p>
+                <p>gzip 対象のファイルパス<br>
+                また、gzip -d 解凍対象のファイルパス (gzipで圧縮したファイルを解凍)、
+                tar -cvf アーカイブファイル名 対象のパス (アーカイブファイルの拡張子は.tar)<br>
+                各英語について、</p>
+                <ul>
+                    <li>c: 新しいアーカイブを作成</li>
+                    <li>v: 処理ファイルを表示</li>
+                    <li>f: アーカイブファイル名を指定</li>
+                </ul>
+                <p>ex) tar -cvf sub.tar sub (subをアーカイブしたsub.tarファイルを作成)</p>
+                <p>tar -xvf アーカイブファイルのパス (アーカイブファイルを展開)</p>
+                <p>tar -czvf アーカイブ・圧縮後のファイル名 対象のパス<br>
+                ex) tar -czvf sub.tar.gz sub (subをアーカイブして圧縮してsub.tar.gzファイルを作成)</p>
+            </div>
+
+
+            <div class="Easier">
+                <h2>コマンド入力を楽にする操作</h2>
+                <p>↑上矢印キーを押すと前に実行したコマンドが表示される</p>
+                <p>history (コマンド履歴を表示)</p>
+                <p>tabキーを押すと自動保管機能が働く</p>
+                <h2>findキーについて</h2>
+                <p>find 検索対象ディレクトリパス 検索表現 (対象のディレクトリから条件に合うファイル・ディレクトリを検索)</p>
+                <p>find 検索対象ディレクトリパス -name 名前 (指定した名前に一致するファイル・ディレクトリを検索)</p>
+                <p>ex) find /root -name aaa.txt (/root内でaaa.txtという名前のファイルを検索)</p>
+                <p>ex) find /root -name "*.txt" (/root内でファイル末尾が.txtのファイルを検索)</p>
+                <p>ex) find /usr -size +1M (/usr内で1MB以上のファイルを検索)</p>
+                <p>ex) find /usr -size -1k (/usr内で1kb以下のファイルを検索)</p>
+            </div>
+
+
+            <div class="search">
+                <h2>検索機能</h2>
+                <p>grep 検索パターン 対象ファイルのパス (対象ファイルから検索パターンに会う行を表示)<br>
+                ex) grep "banana" aaa.txt (aaa.txtに含まれる行を表示)<br>
+                ex) grep -n "banana" aaa.txt (aaa.txtに含まれる行と行番号を表示)</p>
+                <p>grep -r 検索パターン 対象ディレクトリのパス (対象ディレクトリ内のファイルから検索パターンにあう行を表示)</p>
+                <p>grep -nr "banana" / root (/root内のファイルのbananaが含まれる行と行番号を表示)</p>
+            </div>
+
+
+            <div class="echo">
+                <h2>文字や変数を出力</h2>
+                <p>echo 文字・変数 (文字や変数を出力)</p>
+                <h2>環境変数について (簡単に)</h2>
+                <p>環境変数とはOSの中で使われる特別な変数</p>
+                <p>printev (環境変数を出力)</p>
+            </div>
+
+            <div class="redirect"></div>
+            <h2>リダイレクト</h2>
+            <p>リダイレクトとは??<br>
+                あるWebページのアドレス（URL）にアクセスした訪問者を、自動的に別の新しいURLやページへ転送する仕組み</p>
+            <p>コマンド > ファイルパス (出力先を標準出力からファイルに変更)</p>
+            <p>ex) echo "$HOME" > output.txt (環境変数HOMEをoutput.txtに出力)</p>
+            <p>コマンド >> ファイルパス (出力先を標準出力からファイルに変更(追記))</p>
+            <p>ex) echo -e "$PATH\n$HOMENAME" >> output.txt (環境変数PATHとHOMENAMEを改行で区切ってoutput.txtに追記)</p>
+            <p>ex) cat output.txt > output_cat.txt (output_txtの中身をoutput_cat.txtに出力)</p>
+            <p>コマンド 2>ファイルパス (エラーや警告の出力先を標準エラー出力からファイルに変更)</p>
+            <p>ex) echo "AAA" 2> log.txt (存在しないコマンドechoのエラーをlog.txtに出力)</p>
+            <p>コマンド > ファイルパス 2>&1 (出力先を標準出力、標準エラー出力からファイルに変更)</p>
+        </div>
+
+
+        <div class="pipe">
+            <h2>パイプ</h2>
+            <p>コマンド1| コマンド2| コマンド3| …<br>
+            コマンド1の結果をコマンド2の入力に、コマンド2の結果をコマンド3の入力に</p>
+            <p>wc ファイルのパス (行数、単語数、バイト数を出力)</p>
+            <p>wc -l ファイルパス (行数を出力)</p>
+            <p>ex) find /root -name "*.txt" | wc -l (/root内の拡張子.txtのファイルが何個あるかを出力)</p>
+        </div>
+
+
+        <div class="vim">
+            <h2>vimでファイルの編集</h2>
+            <p>vim ファイルパス (ファイルをvimで編集(存在しなければ新規作成))</p>
+            <p>vim test.yaml (test.yamlをvimで編集)</p>
+        </div>
+    </div>
+</body>
+</html>
