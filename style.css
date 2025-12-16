@@ -11,6 +11,12 @@ body {
     border-radius: 16px;
     background-color: #FFFFFF;
 }
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;       /* 余白を減らす */
+    border-radius: 8px;  /* 角丸も少し小さく */
+  }
+}
 
 .lnx {
     height: auto;
