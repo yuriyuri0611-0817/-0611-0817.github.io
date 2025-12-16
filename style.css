@@ -6,15 +6,25 @@ body {
   box-shadow: inset 0 0 0 60px #EEEEEE	;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+    box-shadow: inset 0 0 0 15px #eeeeee;
+  }
+}
+
 .content {
     padding: 40px;
     border-radius: 16px;
     background-color: #FFFFFF;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+
 @media (max-width: 768px) {
   .content {
-    padding: 20px;       /* 余白を減らす */
-    border-radius: 8px;  /* 角丸も少し小さく */
+    padding: 3px;      
+    border-radius: 8px;  
   }
 }
 
@@ -27,6 +37,15 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 40px;
+}
+@media (max-width: 768px) {
+  .basic {
+    flex-direction: column;
+  }
+  .lnx {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .basic-text {
     display: flex;
